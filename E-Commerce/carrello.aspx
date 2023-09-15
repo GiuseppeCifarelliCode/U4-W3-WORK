@@ -42,6 +42,7 @@
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
+        <h3 id="totale" runat="server"></h3>
         </div>
     <div class="d-flex flex-column align-items-center">
     <asp:Label ID="message" runat="server" Text="Carrello Vuoto!" CssClass="fw-bold fs-2"></asp:Label>

@@ -10,12 +10,18 @@ namespace E_Commerce
     public partial class carrello : System.Web.UI.Page
     {
         List<Prodotto> Carrello = new List<Prodotto>();
+        double tot = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             Carrello = (List<Prodotto>)Session["Carrello"];
 
                 if (Carrello != null && Carrello.Count > 0)
                 {
+                    foreach (Prodotto p in Carrello)
+                {
+                    tot += p.Price;
+                }
+                    totale.InnerText = $"Totale: ${tot}";
                     message.Visible = false;
                     SvuotaCarrello.Visible = true;
                     GridView1.DataSource = Carrello;
